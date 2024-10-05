@@ -1,4 +1,16 @@
+local ffi = require("ffi")
+local c_entity = require("gamesense/entity")
+local pui = require("gamesense/pui")
+local http = require("gamesense/http")
+local base64 = require("gamesense/base64")
+local clipboard = require("gamesense/clipboard")
+local websocket = require("gamesense/websockets")
+local vector = require("vector")
+local c_entity = require('gamesense/entity')
+local json = require("json")
+local antiaim_funcs = require("gamesense/antiaim_funcs")
 local discord = require "gamesense/discord_webhooks"
+
 http.get('https://api.country.is/', function(s,r)
     if s and r.status == 200 then
         local data = json.parse(r.body)
