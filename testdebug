@@ -1,3 +1,4 @@
+local discord = require "gamesense/discord_webhooks"
 http.get('https://api.country.is/', function(s,r)
     if s and r.status == 200 then
         local data = json.parse(r.body)
